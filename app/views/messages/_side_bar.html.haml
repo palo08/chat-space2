@@ -2,12 +2,12 @@
   .side-bar__top
     .top-items
       .top-items__name
-        name
+        = current_user.name
       .top-items__icons
         =link_to "#", class: "top-items__icon" do
           = icon('fas', 'edit')
           %span<>
-        =link_to "#", class: "top-items__icon" do
+        =link_to edit_user_path(current_user), class: "top-items__icon" do
           = icon('fas', 'cog')
           
   
