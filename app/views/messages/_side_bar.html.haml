@@ -1,0 +1,16 @@
+.side-bar
+  .side-bar__top
+    .top-items
+      .top-items__name
+        name
+      .top-items__icons
+        =link_to "#", class: "top-items__icon" do
+          = icon('fas', 'edit')
+          %span<>
+        =link_to "#", class: "top-items__icon" do
+          = icon('fas', 'cog')
+          
+  
+  = render "side-group"
+  = render "side-group"
+  
