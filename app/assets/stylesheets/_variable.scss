@@ -1,0 +1,7 @@
+@mixin both_ends{
+  display: flex;
+  justify-content: space-between;
+}
+
+$main-white-color: #ffffff;
+$main-gray-color: #999999;
