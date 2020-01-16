@@ -31,15 +31,20 @@
   }
   .group-list{
     color:$main-white-color;
+    &__link{
+      text-decoration: none;
+    }
     &__name{
       font-size: 15px;
       font-weight: bold;
       padding:20px 20px 5px 20px;
+      color: $main-white-color;
     }
     &__message{
       font-size: 11px;
       font-weight: bold;
       padding: 0 20px 40px 20px;
+      color: $main-white-color;
     }
   }
 }
