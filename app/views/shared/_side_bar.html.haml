@@ -1,0 +1,22 @@
+.side-bar
+  .side-bar__top
+    .top-items
+      .top-items__name
+        = current_user.name
+      .top-items__icons
+        =link_to new_group_path, class: "top-items__icon" do
+          = icon('fas', 'edit')
+          %span<>
+        =link_to edit_user_path(current_user), class: "top-items__icon" do
+          = icon('fas', 'cog')
+          
+  
+  .group-list
+    - current_user.groups.each do |group|
+      .group-list__info
+        =link_to '#', class: "group-list__link" do
+          .group-list__name
+            = group.name
+          .group-list__message
+            まだメッセージはありません。
+      
