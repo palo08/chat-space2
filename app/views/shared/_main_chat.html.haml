@@ -1,25 +1,29 @@
 .chat-main
   .group-info
-    .group-info__name       
-      テスト
-      .group-info__name__member
-        Member yuta
-    .group-info__edit
-      = link_to edit_group_path(@group) do
-        Edit
+    .group-info__name
+      = @group.name
+      .group-info__edit
+        = link_to edit_group_path(@group), class: "group-info__edit__btn" do
+          Edit
+    .group-info__member
+      Member:
+      - @group.users.each do |user|
+        .group-info__member__lists
+          .group-info__member__list
+            = user.name
+
+
 
   .message-list
+    = render partial: "shared/message", collection: @messages
+  
     
     
   .form
-    %form.new_message
-      .input-box
-        %input{type:"text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          =icon('fas', 'image')
-          %input{type:"file", class: "input-box__image__file"}
-      %input{type:"submit", class: "submit-btn", value: "Send"}
-    
-      
-      
-      
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

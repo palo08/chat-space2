@@ -13,18 +13,25 @@
   .group-info{
     height:100px;
     border: solid 1px #eeeeee; 
-    @include both_ends;
     &__name {
       padding:35px 0 0 40px;
-      &__member{
-        color: $main-gray-color;
-        font-size: 12px;
-        padding-top:15px;
+      display:flex;
+      justify-content: space-between;
+      margin-right: 40px;
+    }
+    &__member{
+      color: $main-gray-color;
+      font-size: 12px;
+      display: flex;
+      margin-left:40px;
+      &__lists{
+        margin-bottom: 10px;
+        margin-left: 5px;
       }
     }
     &__edit{
       font-size: 16px;
-      margin:27px 40px 31px 20px;
+      // margin:27px 40px 31px 20px;
       line-height: 40px;
       border: solid 1px skyblue;
       padding:0 20px;
@@ -34,12 +41,14 @@
       }
     }
   }
+}
   
   
 
   .message-list{
     height:calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    overflow: scroll;
     &__info{
       display: flex;
       padding:35px 0 0 40px;
@@ -61,40 +70,33 @@
     height:90px;
     background-color: #d2d2d2;
     padding:20px 40px;
-    form{
+    &__message{
+      width: 100%;
+      height:50px;
+      padding-right:800px;
+    }
+    .new_message{
+      height: 50px;
+      width: 100%;
       display: flex;
-      .input-box{
-        position: relative;
-        display: flex;
-        width:100%;
-        &__text{
-        height: 50px;
-        width: 100%;
-        color: #434a54;
-        border-style: none;
-        padding:0 40px 0 10px;
-        }
-        &__image{
-          position: absolute;
-          top:10px;
-          right:10px;
-          cursor: pointer;
-          font-size: 1.3rem;
-          &__file{
-            display: none;
-          }
-        }
-      }
-      .submit-btn{
-        width:100px;
-        height:50px;
-        padding:0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        color:$main-white-color;
-        cursor:pointer;
-      }
+      position: relative;
+    }
+    &__submit{
+      width:100px;
+      height:50px;
+      padding:0 30px;
+      margin-left: 15px;
+      background-color: #38aef0;
+      color:$main-white-color;
+      cursor:pointer;
+    }
+    .hidden{
+      display: none;
+    }
+    .icon{
+      position: absolute;
+      top:15px;
+      right:130px;
     }
   }
-}
 
