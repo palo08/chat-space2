@@ -14,7 +14,7 @@
 
 
 
-  .message-list
+  .message-list.messages{data: {message: {id: @message.id}}}
     = render partial: "shared/message", collection: @messages
   
     
