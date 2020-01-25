@@ -7,18 +7,17 @@ $(function(){
             <div class = "message-list__info__name">
               ${message.user_name}
             </div>
-            <div calss = "message-list__info__date">
-            ${message.created_at}
+            <div class = "message-list__info__date">
+              ${message.created_at}
             </div>
           </div>
           <div class = "message-list__text">
             <p class = "lower-message__content">
               ${message.content}
             </p>
+            <image src=${message.image} class = "lower-message__image">
           </div>
-          <image src=${message.image} class = "lower-message__image">
-        </div>
-      </div>`
+        </div>`
       return html;
     } else {
       var html = 
@@ -27,7 +26,7 @@ $(function(){
             <div class = "message-list__info__name">
               ${message.user_name}
             </div>
-            <div calss = "message-list__info__date">
+            <div class = "message-list__info__date">
               ${message.created_at}
             </div>
           </div>
