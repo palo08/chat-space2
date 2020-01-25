@@ -60,9 +60,14 @@
         color: $main-gray-color;
         font-size: 12px;
       }
+    
     }
     &__text{
       padding:12px 0 46px 40px;
+      .lower-message__content{
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
     }
   }
   
